@@ -19,7 +19,25 @@ class MenuItemsView(generics.ListCreateAPIView):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
 
+    def get_permissions(self):
+        permission_classes = []
+
+        if self.request.method == 'POST':
+            permission_classes = [IsAuthenticated]
+        
+        return [permission() for permission in permission_classes]
+
+
 
 class SingleMenuItemView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
+
+    def get_permissions(self):
+        permission_classes = []
+
+        if self.request.method != 'GET':
+            permission_classes = [IsAuthenticated]
+        
+        return [permission() for permission in permission_classes]
+

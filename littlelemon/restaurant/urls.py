@@ -6,5 +6,5 @@ urlpatterns = [
     path('', index, name='index'),
     path('api-token-auth/', obtain_auth_token),
     path('menu/', MenuItemsView.as_view(), name='menu'),
-    path('menu/<int:pk>', SingleMenuItemView.as_view()),
+    path('menu/<int:pk>/', SingleMenuItemView.as_view()),
 ]

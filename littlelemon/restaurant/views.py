@@ -28,7 +28,6 @@ class MenuItemsView(generics.ListCreateAPIView):
         return [permission() for permission in permission_classes]
 
 
-
 class SingleMenuItemView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer

@@ -8,7 +8,7 @@
     <title>Capstone Project</title>
 
     <!--- Load favicon -->
-    <link rel="shortcut icon" type="image/png" href="{% static 'restaurant/favicon.ico' %}" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'restaurant/favicon.png' %}" />
 
     <!--- Load CSS -->
     <link rel="preload" as="style" href="{% static 'css/style.css' %}" onload="this.rel = 'stylesheet'" />
@@ -29,6 +29,7 @@
             <li><a href="{% url 'index' %}">Home</a></li>
             <li><a href="{% url 'menu' %}">Menu</a></li>
             <li><a href="{% url 'booking-list' %}">Bookings</a></li>
+            <li><a href="/auth/users/">Register</a></li>
         </ul>
     </nav>
 
